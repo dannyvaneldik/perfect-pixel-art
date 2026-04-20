@@ -1,5 +1,5 @@
 /**
- * Shop gallery data for Danny van Eldik — Perfect Pixel Art
+ * Shop gallery data for Danny van Eldik
  *
  * Werk aan de Muur shop: https://www.werkaandemuur.nl/nl/shop/Danny-van-Eldik/160854
  *

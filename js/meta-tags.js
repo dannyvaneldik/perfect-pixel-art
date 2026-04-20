@@ -1,5 +1,5 @@
 /**
- * SEO meta tag injection for Danny van Eldik — Perfect Pixel Art
+ * SEO meta tag injection for Danny van Eldik
  * Keywords focus: 'Abstracte kunst voor woonkamer', 'Natuurfotografie op maat'
  */
 (function () {
@@ -19,14 +19,14 @@
     '/portfolio.html': {
       title: 'Portfolio | Danny van Eldik — Unieke Muurkunst',
       description:
-        'Blader door het volledige portfolio van Danny van Eldik. Abstracte werken en natuurfotografie beschikbaar als premium print op maat voor uw interieur.',
+        'Blader door het volledige portfolio van Danny van Eldik. Abstracte werken en natuurfotografie, verkrijgbaar in diverse formaten en materialen via Werk aan de Muur.',
       keywords:
         'portfolio abstracte kunst, natuur fotografie kunst kopen, Danny van Eldik kunstenaar, kunstprints bestellen, abstracte kunst voor woonkamer',
     },
     '/shop.html': {
       title: 'Shop | Danny van Eldik — Unieke Muurkunst',
       description:
-        'Bestel uw favoriete kunstwerk van Danny van Eldik als hoogwaardige print. Canvas, acryl en aluminium beschikbaar via Werk aan de Muur.',
+        'Bekijk en bestel jouw favoriete werk van Danny van Eldik. Verkrijgbaar in diverse formaten en materialen via Werk aan de Muur.',
       keywords:
         'kunstprint kopen, canvas print bestellen, Danny van Eldik kunst, natuurfotografie op maat, werk aan de muur, print op canvas woonkamer',
     },
