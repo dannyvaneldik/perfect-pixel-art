@@ -1,0 +1,267 @@
+/* ===== FONTS ===== */
+/* Loaded via Google Fonts in HTML head */
+
+/* ===== BASE ===== */
+html { scroll-behavior: smooth; }
+*,*::before,*::after { box-sizing: border-box; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #fafafa; }
+::-webkit-scrollbar-thumb { background: #C9A96E; border-radius: 3px; }
+
+/* ===== HERO ===== */
+.hero-bg {
+  background: linear-gradient(
+    125deg,
+    #0d0d1a 0%,
+    #1a1040 15%,
+    #2d1b5e 30%,
+    #1e3a5f 45%,
+    #0f4c3a 60%,
+    #1b3a2a 75%,
+    #3d2b1a 90%,
+    #1a0d0d 100%
+  );
+  background-size: 300% 300%;
+  animation: heroShift 18s ease infinite;
+}
+
+@keyframes heroShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Grain texture overlay */
+.hero-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* ===== NAVIGATION ===== */
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: #C9A96E;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after { width: 100%; }
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  display: inline-block;
+  background: #ffffff;
+  color: #1a1a1a;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.btn-primary:hover {
+  background: #C9A96E;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-block;
+  border: 1.5px solid rgba(255,255,255,0.7);
+  color: #ffffff;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  display: inline-block;
+  border: 1.5px solid #1a1a1a;
+  color: #1a1a1a;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+.btn-outline:hover {
+  background: #1a1a1a;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.btn-gold {
+  display: inline-block;
+  background: #C9A96E;
+  color: #ffffff;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+.btn-gold:hover {
+  background: #b8944f;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(201,169,110,0.35);
+}
+
+.btn-wadm {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1a1a1a;
+  color: #ffffff;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn-wadm:hover {
+  background: #C9A96E;
+  transform: translateY(-1px);
+}
+
+/* ===== ART CARDS ===== */
+.art-card {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.art-card:hover { transform: translateY(-10px); }
+
+.art-card-image {
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  transition: box-shadow 0.4s ease;
+}
+.art-card:hover .art-card-image {
+  box-shadow: 0 24px 64px rgba(0,0,0,0.18);
+}
+
+.art-card-info {
+  transform: translateY(100%);
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.art-card:hover .art-card-info { transform: translateY(0); }
+
+.art-card-overlay {
+  transition: background 0.4s ease;
+}
+.art-card:hover .art-card-overlay { background: rgba(0,0,0,0.22) !important; }
+
+/* Gold border accent on hover */
+.art-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(201,169,110,0);
+  transition: border-color 0.4s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+.art-card:hover .art-card-image::after {
+  border-color: rgba(201,169,110,0.6);
+}
+
+/* ===== FILTER BUTTONS ===== */
+.filter-btn {
+  padding: 10px 28px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1.5px solid #d1d5db;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: white;
+}
+.filter-btn:hover {
+  border-color: #C9A96E;
+  color: #C9A96E;
+}
+.filter-btn.active {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+  color: #ffffff;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox-backdrop {
+  animation: fadeIn 0.2s ease;
+}
+.lightbox-content {
+  animation: scaleIn 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+@keyframes fadeIn  { from { opacity:0; } to { opacity:1; } }
+@keyframes scaleIn { from { opacity:0; transform:scale(0.94); } to { opacity:1; transform:scale(1); } }
+
+/* ===== ABOUT SECTION ===== */
+.about-frame {
+  position: relative;
+  isolation: isolate;
+}
+.about-frame-deco {
+  position: absolute;
+  top: 16px; right: -16px;
+  width: 100%; height: 100%;
+  border: 1.5px solid #C9A96E;
+  opacity: 0.35;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ===== SECTION DIVIDER ===== */
+.gold-divider {
+  width: 48px;
+  height: 1.5px;
+  background: #C9A96E;
+  margin: 0 auto;
+}
+.gold-divider-left {
+  width: 48px;
+  height: 1.5px;
+  background: #C9A96E;
+}
+
+/* ===== CONTACT FORM ===== */
+.form-input {
+  width: 100%;
+  border: 1.5px solid #e5e7eb;
+  padding: 14px 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  color: #1a1a1a;
+  background: #fafafa;
+  transition: border-color 0.25s ease, background 0.25s ease;
+  outline: none;
+}
+.form-input:focus {
+  border-color: #C9A96E;
+  background: #ffffff;
+}
+.form-input::placeholder { color: #9ca3af; }
+
+/* ===== SHOP BADGE ===== */
+.art-badge {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+.art-badge-abstract { background: #ede9fe; color: #5b21b6; }
+.art-badge-natuur   { background: #dcfce7; color: #15803d; }
+
+/* ===== SCROLL REVEAL (via Intersection Observer in JS) ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }

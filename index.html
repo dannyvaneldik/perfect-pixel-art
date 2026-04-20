@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            playfair:   ['"Playfair Display"', 'serif'],
+            montserrat: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            gold:      '#C9A96E',
+            'gold-lt': '#E8D5B0',
+            charcoal:  '#1a1a1a',
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="css/custom.css">
+  <script src="js/meta-tags.js"></script>
+</head>
+<body class="bg-white font-montserrat text-charcoal antialiased">
+
+  <!-- ═══════════════════════  NAVIGATION  ═══════════════════════ -->
+  <nav
+    x-data="{ open: false, scrolled: false }"
+    @scroll.window="scrolled = window.scrollY > 60"
+    :class="scrolled ? 'bg-white/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'"
+    class="fixed inset-x-0 top-0 z-50 transition-all duration-400"
+  >
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
+
+      <a href="index.html" :class="scrolled ? 'text-charcoal' : 'text-white'" class="font-playfair text-xl font-semibold tracking-wide transition-colors">
+        Perfect Pixel Art
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="hidden md:flex items-center gap-10 text-xs font-semibold tracking-[0.2em] uppercase">
+        <li><a href="index.html"     :class="scrolled ? 'text-charcoal' : 'text-white'" class="nav-link transition-colors active">Home</a></li>
+        <li><a href="portfolio.html" :class="scrolled ? 'text-charcoal' : 'text-white'" class="nav-link transition-colors">Portfolio</a></li>
+        <li><a href="shop.html"      :class="scrolled ? 'text-charcoal' : 'text-white'" class="nav-link transition-colors">Shop</a></li>
+        <li><a href="contact.html"   :class="scrolled ? 'text-charcoal' : 'text-white'" class="nav-link transition-colors">Contact</a></li>
+      </ul>
+
+      <!-- Mobile hamburger -->
+      <button @click="open = !open" :class="scrolled ? 'text-charcoal' : 'text-white'" class="md:hidden p-1 transition-colors" aria-label="Menu">
+        <span class="block w-6 h-px bg-current mb-1.5 transition-all duration-300 origin-center" :class="open ? 'rotate-45 translate-y-2' : ''"></span>
+        <span class="block w-6 h-px bg-current mb-1.5 transition-all duration-300" :class="open ? 'opacity-0' : ''"></span>
+        <span class="block w-6 h-px bg-current transition-all duration-300 origin-center" :class="open ? '-rotate-45 -translate-y-2' : ''"></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div
+      x-show="open"
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 -translate-y-2"
+      x-transition:enter-end="opacity-100 translate-y-0"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      class="md:hidden bg-white border-t border-gray-100"
+    >
+      <ul class="flex flex-col px-6 py-6 gap-5 text-xs font-semibold tracking-[0.2em] uppercase text-charcoal">
+        <li><a href="index.html"     @click="open=false" class="nav-link">Home</a></li>
+        <li><a href="portfolio.html" @click="open=false" class="nav-link">Portfolio</a></li>
+        <li><a href="shop.html"      @click="open=false" class="nav-link">Shop</a></li>
+        <li><a href="contact.html"   @click="open=false" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════  HERO  ═══════════════════════ -->
+  <section class="hero-grain relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div class="hero-bg absolute inset-0"></div>
+    <div class="absolute inset-0 bg-black/35"></div>
+
+    <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
+      <p class="text-xs font-semibold tracking-[0.4em] uppercase mb-6 opacity-80">Abstracte Kunst &amp; Natuurfotografie</p>
+
+      <h1 class="font-playfair text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.08] mb-8">
+        Kunst die je<br><em>raakt</em>
+      </h1>
+
+      <p class="font-light text-base md:text-lg leading-relaxed mb-10 max-w-xl mx-auto opacity-85">
+        Originele schilderijen en fotografie voor uw interieur —<br class="hidden sm:block">
+        handgemaakt met passie, beschikbaar als print op maat.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="portfolio.html" class="btn-primary px-8 py-4 text-xs font-semibold tracking-[0.2em] uppercase">
+          Bekijk Portfolio
+        </a>
+        <a href="shop.html" class="btn-secondary px-8 py-4 text-xs font-semibold tracking-[0.2em] uppercase">
+          Naar de Shop
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll cue -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-white opacity-50 animate-bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════  TAGLINE STRIP  ═══════════════════════ -->
+  <div class="py-5 bg-charcoal text-white text-center">
+    <p class="font-playfair text-sm italic tracking-wide opacity-75">
+      "Elk werk is een unieke reis — van gevoel naar canvas"
+    </p>
+  </div>
+
+  <!-- ═══════════════════════  ABOUT TEASER  ═══════════════════════ -->
+  <section class="py-28 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+      <div class="reveal">
+        <p class="text-gold text-xs font-semibold tracking-[0.35em] uppercase mb-5">Over de kunstenaar</p>
+        <div class="gold-divider-left mb-6"></div>
+        <h2 class="font-playfair text-4xl md:text-5xl font-bold leading-tight mb-7">
+          Schoonheid in<br>elke lijn
+        </h2>
+        <p class="text-gray-500 font-light leading-relaxed text-sm mb-4">
+          Perfect Pixel Art creëert abstracte en natuur-geïnspireerde kunstwerken die rust en elegantie brengen in uw woonkamer. Elk stuk wordt met zorg samengesteld — van concept tot print.
+        </p>
+        <p class="text-gray-500 font-light leading-relaxed text-sm mb-8">
+          Beschikbaar als hoogwaardige prints op canvas, acryl of aluminium via Werk aan de Muur. Kies uw maat, kies uw materiaal.
+        </p>
+        <a href="portfolio.html" class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase border-b border-charcoal hover:border-gold hover:text-gold pb-1 transition-colors duration-300">
+          Ontdek het werk
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="reveal reveal-delay-2 about-frame">
+        <div class="about-frame-deco"></div>
+        <div class="aspect-square bg-gradient-to-br from-stone-200 via-stone-300 to-stone-400 overflow-hidden flex items-center justify-center text-stone-400">
+          <!-- Replace with <img src="/assets/images/artist-photo.jpg" alt="Perfect Pixel Art kunstenaar" class="w-full h-full object-cover"> -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════  PORTFOLIO PREVIEW  ═══════════════════════ -->
+  <section class="py-28 bg-stone-50">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="text-center mb-16 reveal">
+        <p class="text-gold text-xs font-semibold tracking-[0.35em] uppercase mb-4">Collectie</p>
+        <div class="gold-divider mb-6"></div>
+        <h2 class="font-playfair text-4xl md:text-5xl font-bold">Uitgelicht Werk</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div class="art-card group reveal">
+          <div class="art-card-image aspect-[3/4] bg-gradient-to-br from-violet-400 via-purple-500 to-rose-400">
+            <div class="art-card-overlay absolute inset-0"></div>
+            <div class="art-card-info absolute bottom-0 left-0 right-0 p-5 text-white bg-gradient-to-t from-black/70 to-transparent">
+              <p class="font-playfair text-lg font-semibold">Ochtendschemering</p>
+              <span class="art-badge art-badge-abstract mt-1 inline-block">Abstract</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-card group reveal reveal-delay-1 mt-0 md:mt-12">
+          <div class="art-card-image aspect-[3/4] bg-gradient-to-br from-emerald-800 via-teal-600 to-stone-400">
+            <div class="art-card-overlay absolute inset-0"></div>
+            <div class="art-card-info absolute bottom-0 left-0 right-0 p-5 text-white bg-gradient-to-t from-black/70 to-transparent">
+              <p class="font-playfair text-lg font-semibold">Bos in de Mist</p>
+              <span class="art-badge art-badge-natuur mt-1 inline-block">Natuur</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-card group reveal reveal-delay-2">
+          <div class="art-card-image aspect-[3/4] bg-gradient-to-br from-amber-300 via-orange-400 to-red-500">
+            <div class="art-card-overlay absolute inset-0"></div>
+            <div class="art-card-info absolute bottom-0 left-0 right-0 p-5 text-white bg-gradient-to-t from-black/70 to-transparent">
+              <p class="font-playfair text-lg font-semibold">Gouden Uur</p>
+              <span class="art-badge art-badge-natuur mt-1 inline-block">Natuur</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-14 reveal">
+        <a href="portfolio.html" class="btn-outline px-10 py-4 text-xs font-semibold tracking-[0.2em] uppercase">
+          Heel het Portfolio
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════  CATEGORIES  ═══════════════════════ -->
+  <section class="py-28 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+
+      <a href="portfolio.html?filter=abstract" class="group relative block overflow-hidden aspect-video reveal">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-800 via-blue-900 to-cyan-700 group-hover:scale-105 transition-transform duration-700"></div>
+        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-white p-8">
+          <p class="text-xs tracking-[0.4em] uppercase mb-3 opacity-70">Collectie</p>
+          <h3 class="font-playfair text-3xl md:text-4xl font-bold mb-4">Abstract</h3>
+          <span class="text-xs tracking-[0.2em] uppercase border-b border-white/50 pb-1 group-hover:border-gold group-hover:text-gold transition-colors duration-300">Bekijken →</span>
+        </div>
+      </a>
+
+      <a href="portfolio.html?filter=natuur" class="group relative block overflow-hidden aspect-video reveal reveal-delay-1">
+        <div class="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-700 to-lime-600 group-hover:scale-105 transition-transform duration-700"></div>
+        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-white p-8">
+          <p class="text-xs tracking-[0.4em] uppercase mb-3 opacity-70">Collectie</p>
+          <h3 class="font-playfair text-3xl md:text-4xl font-bold mb-4">Natuur</h3>
+          <span class="text-xs tracking-[0.2em] uppercase border-b border-white/50 pb-1 group-hover:border-gold group-hover:text-gold transition-colors duration-300">Bekijken →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════  SHOP CTA  ═══════════════════════ -->
+  <section class="py-28 px-6 bg-charcoal text-white text-center reveal">
+    <p class="text-gold text-xs font-semibold tracking-[0.35em] uppercase mb-5">Winkel</p>
+    <div class="gold-divider mb-8"></div>
+    <h2 class="font-playfair text-4xl md:text-5xl font-bold mb-6">Bestel uw favoriete werk</h2>
+    <p class="font-light text-gray-300 text-sm leading-relaxed max-w-md mx-auto mb-10">
+      Premium prints op canvas, aluminium en acryl.<br>Snel geleverd via Werk aan de Muur.
+    </p>
+    <a href="shop.html" class="btn-gold px-10 py-4 text-xs font-semibold tracking-[0.2em] uppercase">
+      Naar de Shop
+    </a>
+  </section>
+
+  <!-- ═══════════════════════  FOOTER  ═══════════════════════ -->
+  <footer class="py-12 px-6 border-t border-gray-100">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <a href="index.html" class="font-playfair text-xl font-semibold tracking-wide">Perfect Pixel Art</a>
+      <ul class="flex flex-wrap justify-center gap-8 text-xs font-semibold tracking-[0.2em] uppercase text-gray-400">
+        <li><a href="index.html"     class="hover:text-gold transition-colors">Home</a></li>
+        <li><a href="portfolio.html" class="hover:text-gold transition-colors">Portfolio</a></li>
+        <li><a href="shop.html"      class="hover:text-gold transition-colors">Shop</a></li>
+        <li><a href="contact.html"   class="hover:text-gold transition-colors">Contact</a></li>
+      </ul>
+      <p class="text-xs text-gray-400">&copy; 2024 Perfect Pixel Art. Alle rechten voorbehouden.</p>
+    </div>
+  </footer>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Scroll reveal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const io = new IntersectionObserver(
+        entries => entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+        }),
+        { threshold: 0.12 }
+      );
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    });
+  </script>
+</body>
+</html>
