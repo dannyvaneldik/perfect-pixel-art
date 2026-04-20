@@ -37,14 +37,13 @@
     class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm"
   >
     <div class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
-      <a href="index.html" class="font-playfair text-xl font-semibold tracking-wide text-charcoal">
-        Perfect Pixel Art
+      <a href="index.html" class="brand-wordmark text-charcoal">
+        Danny van Eldik
       </a>
       <ul class="hidden md:flex items-center gap-10 text-xs font-semibold tracking-[0.2em] uppercase">
         <li><a href="index.html"     class="nav-link text-gray-500 hover:text-charcoal transition-colors">Home</a></li>
         <li><a href="portfolio.html" class="nav-link active text-charcoal">Portfolio</a></li>
         <li><a href="shop.html"      class="nav-link text-gray-500 hover:text-charcoal transition-colors">Shop</a></li>
-        <li><a href="contact.html"   class="nav-link text-gray-500 hover:text-charcoal transition-colors">Contact</a></li>
       </ul>
       <button @click="open = !open" class="md:hidden w-11 h-11 flex items-center justify-center text-charcoal flex-shrink-0" aria-label="Menu" :aria-expanded="open">
         <span class="block w-6 h-px bg-current mb-1.5 transition-all duration-300 origin-center" :class="open ? 'rotate-45 translate-y-2' : ''"></span>
@@ -56,8 +55,7 @@
       <ul class="flex flex-col px-6 py-2 text-xs font-semibold tracking-[0.2em] uppercase">
         <li><a href="index.html"     @click="open=false" class="nav-link block py-4 border-b border-gray-100">Home</a></li>
         <li><a href="portfolio.html" @click="open=false" class="nav-link block py-4 border-b border-gray-100">Portfolio</a></li>
-        <li><a href="shop.html"      @click="open=false" class="nav-link block py-4 border-b border-gray-100">Shop</a></li>
-        <li><a href="contact.html"   @click="open=false" class="nav-link block py-4">Contact</a></li>
+        <li><a href="shop.html"      @click="open=false" class="nav-link block py-4">Shop</a></li>
       </ul>
     </div>
   </nav>
@@ -67,8 +65,8 @@
     <p class="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Werk</p>
     <div class="gold-divider mb-6"></div>
     <h1 class="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-5">Portfolio</h1>
-    <p class="text-gray-400 text-sm font-light max-w-sm mx-auto leading-relaxed">
-      Abstracte schilderijen en natuurfotografie — bekijk en bestel uw favoriete werk.
+    <p class="text-gray-500 text-sm font-light max-w-xl mx-auto leading-relaxed">
+      Unieke kunst geeft jouw muur meer kleur — bekijk en bestel je favoriete werk.
     </p>
   </header>
 
@@ -130,7 +128,7 @@
               <p class="font-playfair text-lg font-semibold" x-text="art.title"></p>
               <p class="text-xs opacity-70 mt-0.5" x-text="art.subtitle"></p>
               <div class="flex items-center justify-between mt-3">
-                <p class="text-xs opacity-60" x-text="art.dimensions + ' · ' + art.medium"></p>
+                <p class="text-xs opacity-60">Verkrijgbaar in diverse formaten en materialen</p>
                 <p class="text-xs font-semibold text-gold" x-text="art.price"></p>
               </div>
             </div>
@@ -139,7 +137,7 @@
           <!-- Card footer -->
           <div class="pt-4">
             <p class="font-playfair text-base font-semibold" x-text="art.title"></p>
-            <p class="text-xs text-gray-400 mt-1" x-text="art.medium + ' · ' + art.dimensions"></p>
+            <p class="text-xs text-gray-400 mt-1">Verkrijgbaar in diverse formaten en materialen</p>
           </div>
         </div>
       </template>
@@ -197,12 +195,8 @@
 
               <div class="border-t border-gray-100 pt-6 space-y-3 text-sm">
                 <div class="flex justify-between">
-                  <span class="text-gray-400">Afmetingen</span>
-                  <span class="font-medium" x-text="lightbox.dimensions"></span>
-                </div>
-                <div class="flex justify-between">
-                  <span class="text-gray-400">Medium</span>
-                  <span class="font-medium" x-text="lightbox.medium"></span>
+                  <span class="text-gray-400">Beschikbaarheid</span>
+                  <span class="font-medium text-right">Diverse formaten &amp; materialen</span>
                 </div>
                 <div class="flex justify-between">
                   <span class="text-gray-400">Prijs</span>
@@ -241,21 +235,25 @@
   <!-- ═══════════════════════  FOOTER  ═══════════════════════ -->
   <footer class="py-12 px-6 border-t border-gray-100 mt-16">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-      <a href="index.html" class="font-playfair text-xl font-semibold tracking-wide">Perfect Pixel Art</a>
+      <a href="index.html" class="brand-wordmark text-charcoal">Danny van Eldik</a>
       <ul class="flex flex-wrap justify-center gap-8 text-xs font-semibold tracking-[0.2em] uppercase text-gray-400">
         <li><a href="index.html"     class="hover:text-gold transition-colors">Home</a></li>
         <li><a href="portfolio.html" class="hover:text-gold transition-colors">Portfolio</a></li>
         <li><a href="shop.html"      class="hover:text-gold transition-colors">Shop</a></li>
-        <li><a href="contact.html"   class="hover:text-gold transition-colors">Contact</a></li>
       </ul>
-      <p class="text-xs text-gray-400">&copy; 2024 Perfect Pixel Art</p>
+      <p class="text-xs text-gray-400">&copy; <span id="footer-year"></span> Danny van Eldik</p>
     </div>
   </footer>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-  <!-- Read URL param ?filter=abstract|natuur and pre-set Alpine state -->
+  <!-- Dynamic year + URL filter param -->
   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const yr = document.getElementById('footer-year');
+      if (yr) yr.textContent = new Date().getFullYear();
+    });
+
     document.addEventListener('alpine:init', () => {
       const param = new URLSearchParams(window.location.search).get('filter');
       if (param === 'abstract' || param === 'natuur') {

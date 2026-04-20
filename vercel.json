@@ -32,8 +32,7 @@
   ],
   "rewrites": [
     { "source": "/portfolio", "destination": "/portfolio.html" },
-    { "source": "/shop",      "destination": "/shop.html" },
-    { "source": "/contact",   "destination": "/contact.html" }
+    { "source": "/shop",      "destination": "/shop.html" }
   ],
   "cleanUrls": true,
   "trailingSlash": false

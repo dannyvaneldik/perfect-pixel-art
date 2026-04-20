@@ -34,14 +34,13 @@
   <!-- ═══════════════════════  NAVIGATION  ═══════════════════════ -->
   <nav x-data="{ open: false }" class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
-      <a href="index.html" class="font-playfair text-xl font-semibold tracking-wide text-charcoal">
-        Perfect Pixel Art
+      <a href="index.html" class="brand-wordmark text-charcoal">
+        Danny van Eldik
       </a>
       <ul class="hidden md:flex items-center gap-10 text-xs font-semibold tracking-[0.2em] uppercase">
         <li><a href="index.html"     class="nav-link text-gray-500 hover:text-charcoal transition-colors">Home</a></li>
         <li><a href="portfolio.html" class="nav-link text-gray-500 hover:text-charcoal transition-colors">Portfolio</a></li>
         <li><a href="shop.html"      class="nav-link active text-charcoal">Shop</a></li>
-        <li><a href="contact.html"   class="nav-link text-gray-500 hover:text-charcoal transition-colors">Contact</a></li>
       </ul>
       <button @click="open = !open" class="md:hidden w-11 h-11 flex items-center justify-center text-charcoal flex-shrink-0" aria-label="Menu" :aria-expanded="open">
         <span class="block w-6 h-px bg-current mb-1.5 transition-all duration-300 origin-center" :class="open ? 'rotate-45 translate-y-2' : ''"></span>
@@ -53,8 +52,7 @@
       <ul class="flex flex-col px-6 py-2 text-xs font-semibold tracking-[0.2em] uppercase">
         <li><a href="index.html"     @click="open=false" class="nav-link block py-4 border-b border-gray-100">Home</a></li>
         <li><a href="portfolio.html" @click="open=false" class="nav-link block py-4 border-b border-gray-100">Portfolio</a></li>
-        <li><a href="shop.html"      @click="open=false" class="nav-link block py-4 border-b border-gray-100">Shop</a></li>
-        <li><a href="contact.html"   @click="open=false" class="nav-link block py-4">Contact</a></li>
+        <li><a href="shop.html"      @click="open=false" class="nav-link block py-4">Shop</a></li>
       </ul>
     </div>
   </nav>
@@ -64,8 +62,8 @@
     <p class="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Bestel</p>
     <div class="gold-divider mb-6"></div>
     <h1 class="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-5">Shop</h1>
-    <p class="text-gray-400 text-sm font-light max-w-sm mx-auto leading-relaxed">
-      Premium prints op canvas, acryl en aluminium.<br>Geleverd via Werk aan de Muur.
+    <p class="text-gray-500 text-sm font-light max-w-xl mx-auto leading-relaxed">
+      Premium prints op o.a. canvas, aluminium en acryl.<br>Snel geleverd via Werk aan de Muur.
     </p>
   </header>
 
@@ -75,7 +73,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
         <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
       </svg>
-      <p>Alle werken zijn beschikbaar als hoogwaardige print via <strong>Werk aan de Muur</strong>. Klik op &ldquo;Bestel&rdquo; om direct naar de productpagina te gaan voor maat- en materiaalkeuze.</p>
+      <p>Alle werken zijn beschikbaar als hoogwaardige print via <strong>Werk aan de Muur</strong>. Klik op &ldquo;Bestel&rdquo; om direct naar de productpagina te gaan voor je maat- en materiaalkeuze.</p>
     </div>
   </div>
 
@@ -129,12 +127,7 @@
               <p class="text-gold font-semibold text-sm shrink-0 ml-3" x-text="item.priceFrom"></p>
             </div>
 
-            <!-- Formats -->
-            <div class="flex flex-wrap gap-1.5 mb-5">
-              <template x-for="fmt in item.formats" :key="fmt">
-                <span class="text-xs border border-gray-200 text-gray-500 px-2.5 py-1" x-text="fmt"></span>
-              </template>
-            </div>
+            <p class="text-xs text-gray-500 mb-5">Verkrijgbaar in diverse formaten en materialen</p>
 
             <a
               :href="item.wadmUrl"
@@ -154,6 +147,74 @@
 
   </main>
 
+  <!-- ═══════════════════════  MATERIALEN  ═══════════════════════ -->
+  <section class="py-16 md:py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-14 reveal">
+        <p class="text-gold text-xs font-semibold tracking-[0.35em] uppercase mb-4">Materialen</p>
+        <div class="gold-divider mb-6"></div>
+        <h2 class="font-playfair text-3xl md:text-4xl font-bold mb-4">Kwaliteit &amp; Materialen</h2>
+        <p class="text-gray-500 text-sm font-light max-w-xl mx-auto leading-relaxed">
+          Elk werk is verkrijgbaar op meerdere hoogwaardige materialen. Kies wat past bij jouw stijl en interieur.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <article class="material-card reveal">
+          <span class="material-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 4h16v16H4z M4 4l16 16 M20 4L4 20"/>
+            </svg>
+          </span>
+          <h3 class="font-playfair text-xl font-semibold mb-2">Acrylglas</h3>
+          <p class="text-gray-500 text-sm font-light leading-relaxed">Luxe dieptewerking en intense kleuren.</p>
+        </article>
+
+        <article class="material-card reveal reveal-delay-1">
+          <span class="material-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h18v10H3z M7 7v10 M17 7v10"/>
+            </svg>
+          </span>
+          <h3 class="font-playfair text-xl font-semibold mb-2">Aluminium Dibond</h3>
+          <p class="text-gray-500 text-sm font-light leading-relaxed">Strak, modern en reflectievrij.</p>
+        </article>
+
+        <article class="material-card reveal reveal-delay-2">
+          <span class="material-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v14H4z M8 5v14 M4 12h16"/>
+            </svg>
+          </span>
+          <h3 class="font-playfair text-xl font-semibold mb-2">Canvas</h3>
+          <p class="text-gray-500 text-sm font-light leading-relaxed">Tijdloze warmte en textuur.</p>
+        </article>
+
+        <article class="material-card reveal">
+          <span class="material-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 5h14v14H5z M9 9h6v6H9z"/>
+            </svg>
+          </span>
+          <h3 class="font-playfair text-xl font-semibold mb-2">ArtFrame</h3>
+          <p class="text-gray-500 text-sm font-light leading-relaxed">Flexibel wisselen van kunst in een aluminium frame.</p>
+        </article>
+
+        <article class="material-card reveal reveal-delay-1">
+          <span class="material-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 6l4-3 5 3 5-3 4 3v12l-4 3-5-3-5 3-4-3z"/>
+            </svg>
+          </span>
+          <h3 class="font-playfair text-xl font-semibold mb-2">Fotobehang</h3>
+          <p class="text-gray-500 text-sm font-light leading-relaxed">Maak van je muur een uniek statement.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════════════════  WHY WADM  ═══════════════════════ -->
   <section class="py-14 md:py-20 bg-stone-50">
     <div class="max-w-5xl mx-auto px-6">
@@ -171,7 +232,7 @@
             </svg>
           </div>
           <h3 class="font-playfair text-lg font-semibold mb-2">Premium kwaliteit</h3>
-          <p class="text-gray-400 text-sm font-light leading-relaxed">Geprint op topkwaliteit canvas, acryl en aluminium voor een langdurig resultaat.</p>
+          <p class="text-gray-500 text-sm font-light leading-relaxed">Geprint op topkwaliteit canvas, acryl en aluminium voor een langdurig resultaat.</p>
         </div>
         <div class="reveal reveal-delay-1">
           <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -180,7 +241,7 @@
             </svg>
           </div>
           <h3 class="font-playfair text-lg font-semibold mb-2">Maatkeuze</h3>
-          <p class="text-gray-400 text-sm font-light leading-relaxed">Van klein formaat tot groot wandstuk — kies de afmetingen die passen bij uw interieur.</p>
+          <p class="text-gray-500 text-sm font-light leading-relaxed">Van klein formaat tot groot wandstuk — kies de afmetingen die passen bij jouw interieur.</p>
         </div>
         <div class="reveal reveal-delay-2">
           <div class="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -189,7 +250,7 @@
             </svg>
           </div>
           <h3 class="font-playfair text-lg font-semibold mb-2">Snelle levering</h3>
-          <p class="text-gray-400 text-sm font-light leading-relaxed">Professioneel verpakt en snel aan huis bezorgd, klaar om op te hangen.</p>
+          <p class="text-gray-500 text-sm font-light leading-relaxed">Professioneel verpakt en snel aan huis bezorgd, klaar om op te hangen.</p>
         </div>
       </div>
     </div>
@@ -198,20 +259,22 @@
   <!-- ═══════════════════════  FOOTER  ═══════════════════════ -->
   <footer class="py-12 px-6 border-t border-gray-100">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-      <a href="index.html" class="font-playfair text-xl font-semibold tracking-wide">Perfect Pixel Art</a>
+      <a href="index.html" class="brand-wordmark text-charcoal">Danny van Eldik</a>
       <ul class="flex flex-wrap justify-center gap-8 text-xs font-semibold tracking-[0.2em] uppercase text-gray-400">
         <li><a href="index.html"     class="hover:text-gold transition-colors">Home</a></li>
         <li><a href="portfolio.html" class="hover:text-gold transition-colors">Portfolio</a></li>
         <li><a href="shop.html"      class="hover:text-gold transition-colors">Shop</a></li>
-        <li><a href="contact.html"   class="hover:text-gold transition-colors">Contact</a></li>
       </ul>
-      <p class="text-xs text-gray-400">&copy; 2024 Perfect Pixel Art</p>
+      <p class="text-xs text-gray-400">&copy; <span id="footer-year"></span> Danny van Eldik</p>
     </div>
   </footer>
 
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      const yr = document.getElementById('footer-year');
+      if (yr) yr.textContent = new Date().getFullYear();
+
       const io = new IntersectionObserver(
         entries => entries.forEach(e => {
           if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
