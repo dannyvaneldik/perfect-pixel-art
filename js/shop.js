@@ -1,5 +1,5 @@
 /**
- * Shop gallery data for Perfect Pixel Art
+ * Shop gallery data for Danny van Eldik
  *
  * Werk aan de Muur integration note:
  * ─────────────────────────────────────────────────────────────────────
@@ -23,17 +23,15 @@ const shopItems = [
     id: 1,
     title: 'Ochtendschemering',
     category: 'abstract',
-    formats: ['Canvas', 'Acryl', 'Aluminium'],
     priceFrom: '€45',
     gradient: 'from-violet-400 via-purple-500 to-rose-400',
-    wadmUrl: 'https://www.werkaandemuur.nl', // vervang met echte URL
+    wadmUrl: 'https://www.werkaandemuur.nl',
     featured: true,
   },
   {
     id: 2,
     title: 'Diepzee',
     category: 'abstract',
-    formats: ['Canvas', 'Aluminium'],
     priceFrom: '€55',
     gradient: 'from-slate-800 via-blue-900 to-cyan-700',
     wadmUrl: 'https://www.werkaandemuur.nl',
@@ -43,7 +41,6 @@ const shopItems = [
     id: 3,
     title: 'Vuur & IJs',
     category: 'abstract',
-    formats: ['Canvas', 'Acryl', 'Aluminium'],
     priceFrom: '€60',
     gradient: 'from-orange-400 via-red-500 to-blue-600',
     wadmUrl: 'https://www.werkaandemuur.nl',
@@ -53,7 +50,6 @@ const shopItems = [
     id: 4,
     title: 'Bos in de Mist',
     category: 'natuur',
-    formats: ['Canvas', 'Fotopapier', 'Aluminium'],
     priceFrom: '€65',
     gradient: 'from-emerald-800 via-teal-600 to-stone-400',
     wadmUrl: 'https://www.werkaandemuur.nl',
@@ -63,7 +59,6 @@ const shopItems = [
     id: 5,
     title: 'Gouden Uur',
     category: 'natuur',
-    formats: ['Canvas', 'Fotopapier'],
     priceFrom: '€55',
     gradient: 'from-amber-300 via-orange-400 to-red-500',
     wadmUrl: 'https://www.werkaandemuur.nl',
@@ -73,7 +68,6 @@ const shopItems = [
     id: 6,
     title: 'Waterval',
     category: 'natuur',
-    formats: ['Canvas', 'Acryl', 'Fotopapier'],
     priceFrom: '€65',
     gradient: 'from-sky-300 via-blue-400 to-teal-600',
     wadmUrl: 'https://www.werkaandemuur.nl',
