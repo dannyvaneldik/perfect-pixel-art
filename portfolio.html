@@ -46,27 +46,27 @@
         <li><a href="shop.html"      class="nav-link text-gray-500 hover:text-charcoal transition-colors">Shop</a></li>
         <li><a href="contact.html"   class="nav-link text-gray-500 hover:text-charcoal transition-colors">Contact</a></li>
       </ul>
-      <button @click="open = !open" class="md:hidden p-1 text-charcoal" aria-label="Menu">
+      <button @click="open = !open" class="md:hidden w-11 h-11 flex items-center justify-center text-charcoal flex-shrink-0" aria-label="Menu" :aria-expanded="open">
         <span class="block w-6 h-px bg-current mb-1.5 transition-all duration-300 origin-center" :class="open ? 'rotate-45 translate-y-2' : ''"></span>
         <span class="block w-6 h-px bg-current mb-1.5 transition-all duration-300" :class="open ? 'opacity-0' : ''"></span>
         <span class="block w-6 h-px bg-current transition-all duration-300 origin-center" :class="open ? '-rotate-45 -translate-y-2' : ''"></span>
       </button>
     </div>
     <div x-show="open" x-transition class="md:hidden bg-white border-t border-gray-100">
-      <ul class="flex flex-col px-6 py-6 gap-5 text-xs font-semibold tracking-[0.2em] uppercase">
-        <li><a href="index.html"     @click="open=false" class="nav-link">Home</a></li>
-        <li><a href="portfolio.html" @click="open=false" class="nav-link">Portfolio</a></li>
-        <li><a href="shop.html"      @click="open=false" class="nav-link">Shop</a></li>
-        <li><a href="contact.html"   @click="open=false" class="nav-link">Contact</a></li>
+      <ul class="flex flex-col px-6 py-2 text-xs font-semibold tracking-[0.2em] uppercase">
+        <li><a href="index.html"     @click="open=false" class="nav-link block py-4 border-b border-gray-100">Home</a></li>
+        <li><a href="portfolio.html" @click="open=false" class="nav-link block py-4 border-b border-gray-100">Portfolio</a></li>
+        <li><a href="shop.html"      @click="open=false" class="nav-link block py-4 border-b border-gray-100">Shop</a></li>
+        <li><a href="contact.html"   @click="open=false" class="nav-link block py-4">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- ═══════════════════════  PAGE HEADER  ═══════════════════════ -->
-  <header class="pt-32 pb-16 px-6 text-center bg-stone-50">
+  <header class="pt-24 md:pt-32 pb-12 md:pb-16 px-6 text-center bg-stone-50">
     <p class="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Werk</p>
     <div class="gold-divider mb-6"></div>
-    <h1 class="font-playfair text-5xl md:text-6xl font-bold mb-5">Portfolio</h1>
+    <h1 class="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-5">Portfolio</h1>
     <p class="text-gray-400 text-sm font-light max-w-sm mx-auto leading-relaxed">
       Abstracte schilderijen en natuurfotografie — bekijk en bestel uw favoriete werk.
     </p>
@@ -163,23 +163,28 @@
       @click.self="closeLightbox()"
     >
       <template x-if="lightbox">
-        <div class="lightbox-content bg-white max-w-4xl w-full grid md:grid-cols-2 overflow-hidden shadow-2xl">
+        <div class="lightbox-content bg-white max-w-4xl w-full grid md:grid-cols-2 overflow-hidden shadow-2xl relative">
 
-          <!-- Image pane -->
+          <!-- Close button — absolute top-right, large touch target -->
+          <button
+            @click="closeLightbox()"
+            class="absolute top-3 right-3 z-20 w-10 h-10 flex items-center justify-center bg-white/90 hover:bg-white text-gray-500 hover:text-charcoal transition-colors shadow-sm"
+            aria-label="Sluiten"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+
+          <!-- Image pane: fixed height on mobile, auto on desktop -->
           <div
-            class="aspect-square md:aspect-auto bg-gradient-to-br min-h-[300px]"
+            class="h-56 sm:h-72 md:h-auto md:aspect-auto bg-gradient-to-br"
             :class="'bg-gradient-to-br ' + lightbox.gradient"
           ></div>
 
           <!-- Info pane -->
-          <div class="p-8 md:p-10 flex flex-col justify-between">
+          <div class="p-6 md:p-10 flex flex-col justify-between">
             <div>
-              <!-- Close -->
-              <button @click="closeLightbox()" class="ml-auto block mb-8 text-gray-300 hover:text-charcoal transition-colors" aria-label="Sluiten">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-              </button>
 
               <span
                 class="art-badge mb-4 inline-block"

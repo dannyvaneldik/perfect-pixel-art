@@ -42,34 +42,34 @@
         <li><a href="shop.html"      class="nav-link text-gray-500 hover:text-charcoal transition-colors">Shop</a></li>
         <li><a href="contact.html"   class="nav-link active text-charcoal">Contact</a></li>
       </ul>
-      <button @click="open = !open" class="md:hidden p-1 text-charcoal" aria-label="Menu">
+      <button @click="open = !open" class="md:hidden w-11 h-11 flex items-center justify-center text-charcoal flex-shrink-0" aria-label="Menu" :aria-expanded="open">
         <span class="block w-6 h-px bg-current mb-1.5 transition-all duration-300 origin-center" :class="open ? 'rotate-45 translate-y-2' : ''"></span>
         <span class="block w-6 h-px bg-current mb-1.5 transition-all duration-300" :class="open ? 'opacity-0' : ''"></span>
         <span class="block w-6 h-px bg-current transition-all duration-300 origin-center" :class="open ? '-rotate-45 -translate-y-2' : ''"></span>
       </button>
     </div>
     <div x-show="open" x-transition class="md:hidden bg-white border-t border-gray-100">
-      <ul class="flex flex-col px-6 py-6 gap-5 text-xs font-semibold tracking-[0.2em] uppercase">
-        <li><a href="index.html"     @click="open=false" class="nav-link">Home</a></li>
-        <li><a href="portfolio.html" @click="open=false" class="nav-link">Portfolio</a></li>
-        <li><a href="shop.html"      @click="open=false" class="nav-link">Shop</a></li>
-        <li><a href="contact.html"   @click="open=false" class="nav-link">Contact</a></li>
+      <ul class="flex flex-col px-6 py-2 text-xs font-semibold tracking-[0.2em] uppercase">
+        <li><a href="index.html"     @click="open=false" class="nav-link block py-4 border-b border-gray-100">Home</a></li>
+        <li><a href="portfolio.html" @click="open=false" class="nav-link block py-4 border-b border-gray-100">Portfolio</a></li>
+        <li><a href="shop.html"      @click="open=false" class="nav-link block py-4 border-b border-gray-100">Shop</a></li>
+        <li><a href="contact.html"   @click="open=false" class="nav-link block py-4">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- ═══════════════════════  PAGE HEADER  ═══════════════════════ -->
-  <header class="pt-32 pb-16 px-6 text-center bg-stone-50">
+  <header class="pt-24 md:pt-32 pb-12 md:pb-16 px-6 text-center bg-stone-50">
     <p class="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Bereikbaar</p>
     <div class="gold-divider mb-6"></div>
-    <h1 class="font-playfair text-5xl md:text-6xl font-bold mb-5">Contact</h1>
+    <h1 class="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-5">Contact</h1>
     <p class="text-gray-400 text-sm font-light max-w-xs mx-auto leading-relaxed">
       Vragen, opdrachten of een samenwerking? Stuur een bericht.
     </p>
   </header>
 
   <!-- ═══════════════════════  CONTACT LAYOUT  ═══════════════════════ -->
-  <main class="max-w-5xl mx-auto px-6 lg:px-10 py-20 grid md:grid-cols-5 gap-16">
+  <main class="max-w-5xl mx-auto px-6 lg:px-10 py-12 md:py-20 grid md:grid-cols-5 gap-12 md:gap-16">
 
     <!-- Left: info -->
     <aside class="md:col-span-2 space-y-10 reveal">

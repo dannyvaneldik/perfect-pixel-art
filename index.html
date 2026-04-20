@@ -51,8 +51,8 @@
         <li><a href="contact.html"   :class="scrolled ? 'text-charcoal' : 'text-white'" class="nav-link transition-colors">Contact</a></li>
       </ul>
 
-      <!-- Mobile hamburger -->
-      <button @click="open = !open" :class="scrolled ? 'text-charcoal' : 'text-white'" class="md:hidden p-1 transition-colors" aria-label="Menu">
+      <!-- Mobile hamburger — min 44×44px touch target -->
+      <button @click="open = !open" :class="scrolled ? 'text-charcoal' : 'text-white'" class="md:hidden w-11 h-11 flex items-center justify-center transition-colors flex-shrink-0" aria-label="Menu" :aria-expanded="open">
         <span class="block w-6 h-px bg-current mb-1.5 transition-all duration-300 origin-center" :class="open ? 'rotate-45 translate-y-2' : ''"></span>
         <span class="block w-6 h-px bg-current mb-1.5 transition-all duration-300" :class="open ? 'opacity-0' : ''"></span>
         <span class="block w-6 h-px bg-current transition-all duration-300 origin-center" :class="open ? '-rotate-45 -translate-y-2' : ''"></span>
@@ -70,11 +70,11 @@
       x-transition:leave-end="opacity-0"
       class="md:hidden bg-white border-t border-gray-100"
     >
-      <ul class="flex flex-col px-6 py-6 gap-5 text-xs font-semibold tracking-[0.2em] uppercase text-charcoal">
-        <li><a href="index.html"     @click="open=false" class="nav-link">Home</a></li>
-        <li><a href="portfolio.html" @click="open=false" class="nav-link">Portfolio</a></li>
-        <li><a href="shop.html"      @click="open=false" class="nav-link">Shop</a></li>
-        <li><a href="contact.html"   @click="open=false" class="nav-link">Contact</a></li>
+      <ul class="flex flex-col px-6 py-2 text-xs font-semibold tracking-[0.2em] uppercase text-charcoal">
+        <li><a href="index.html"     @click="open=false" class="nav-link block py-4 border-b border-gray-100">Home</a></li>
+        <li><a href="portfolio.html" @click="open=false" class="nav-link block py-4 border-b border-gray-100">Portfolio</a></li>
+        <li><a href="shop.html"      @click="open=false" class="nav-link block py-4 border-b border-gray-100">Shop</a></li>
+        <li><a href="contact.html"   @click="open=false" class="nav-link block py-4">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -87,7 +87,7 @@
     <div class="relative z-10 text-center text-white px-6 max-w-4xl mx-auto">
       <p class="text-xs font-semibold tracking-[0.4em] uppercase mb-6 opacity-80">Abstracte Kunst &amp; Natuurfotografie</p>
 
-      <h1 class="font-playfair text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.08] mb-8">
+      <h1 class="font-playfair text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.08] mb-8">
         Kunst die je<br><em>raakt</em>
       </h1>
 
@@ -122,8 +122,8 @@
   </div>
 
   <!-- ═══════════════════════  ABOUT TEASER  ═══════════════════════ -->
-  <section class="py-28 px-6">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-24 items-center">
 
       <div class="reveal">
         <p class="text-gold text-xs font-semibold tracking-[0.35em] uppercase mb-5">Over de kunstenaar</p>
@@ -159,7 +159,7 @@
   </section>
 
   <!-- ═══════════════════════  PORTFOLIO PREVIEW  ═══════════════════════ -->
-  <section class="py-28 bg-stone-50">
+  <section class="py-16 md:py-24 bg-stone-50">
     <div class="max-w-6xl mx-auto px-6">
 
       <div class="text-center mb-16 reveal">
@@ -168,7 +168,7 @@
         <h2 class="font-playfair text-4xl md:text-5xl font-bold">Uitgelicht Werk</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
         <div class="art-card group reveal">
           <div class="art-card-image aspect-[3/4] bg-gradient-to-br from-violet-400 via-purple-500 to-rose-400">
@@ -180,7 +180,7 @@
           </div>
         </div>
 
-        <div class="art-card group reveal reveal-delay-1 mt-0 md:mt-12">
+        <div class="art-card group reveal reveal-delay-1 sm:col-span-2 md:col-span-1 md:mt-12">
           <div class="art-card-image aspect-[3/4] bg-gradient-to-br from-emerald-800 via-teal-600 to-stone-400">
             <div class="art-card-overlay absolute inset-0"></div>
             <div class="art-card-info absolute bottom-0 left-0 right-0 p-5 text-white bg-gradient-to-t from-black/70 to-transparent">
@@ -211,8 +211,8 @@
   </section>
 
   <!-- ═══════════════════════  CATEGORIES  ═══════════════════════ -->
-  <section class="py-28 px-6">
-    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+  <section class="py-16 md:py-24 px-6">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 md:gap-8">
 
       <a href="portfolio.html?filter=abstract" class="group relative block overflow-hidden aspect-video reveal">
         <div class="absolute inset-0 bg-gradient-to-br from-slate-800 via-blue-900 to-cyan-700 group-hover:scale-105 transition-transform duration-700"></div>
@@ -238,7 +238,7 @@
   </section>
 
   <!-- ═══════════════════════  SHOP CTA  ═══════════════════════ -->
-  <section class="py-28 px-6 bg-charcoal text-white text-center reveal">
+  <section class="py-16 md:py-24 px-6 bg-charcoal text-white text-center reveal">
     <p class="text-gold text-xs font-semibold tracking-[0.35em] uppercase mb-5">Winkel</p>
     <div class="gold-divider mb-8"></div>
     <h2 class="font-playfair text-4xl md:text-5xl font-bold mb-6">Bestel uw favoriete werk</h2>
