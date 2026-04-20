@@ -11,25 +11,10 @@ html { scroll-behavior: smooth; }
 
 /* ===== HERO ===== */
 .hero-bg {
-  background: linear-gradient(
-    125deg,
-    #0d0d1a 0%,
-    #1a1040 15%,
-    #2d1b5e 30%,
-    #1e3a5f 45%,
-    #0f4c3a 60%,
-    #1b3a2a 75%,
-    #3d2b1a 90%,
-    #1a0d0d 100%
-  );
-  background-size: 300% 300%;
-  animation: heroShift 18s ease infinite;
-}
-
-@keyframes heroShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  background-image: url("/assets/images/hero-bg.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Grain texture overlay */
