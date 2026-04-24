@@ -10,36 +10,22 @@ html { scroll-behavior: smooth; }
 ::-webkit-scrollbar-thumb { background: #C9A96E; border-radius: 3px; }
 
 /* ===== HERO ===== */
-.hero-bg {
-  background: linear-gradient(
-    125deg,
-    #0d0d1a 0%,
-    #1a1040 15%,
-    #2d1b5e 30%,
-    #1e3a5f 45%,
-    #0f4c3a 60%,
-    #1b3a2a 75%,
-    #3d2b1a 90%,
-    #1a0d0d 100%
-  );
-  background-size: 300% 300%;
-  animation: heroShift 18s ease infinite;
+.hero-photo {
+  background-image: url('/images/IMG_2367.jpeg');
+  background-size: cover;
+  background-position: center;
 }
 
-@keyframes heroShift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@media (min-width: 1024px) {
+  .hero-photo {
+    background-position: top right;
+  }
 }
 
-/* Grain texture overlay */
-.hero-grain::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  opacity: 0.3;
+/* ===== GALLERY FRAME ===== */
+.gallery-frame {
+  background: #f5f5f5;
+  padding: 12px;
 }
 
 /* ===== NAVIGATION ===== */
