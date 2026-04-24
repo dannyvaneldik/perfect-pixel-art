@@ -37,14 +37,13 @@
     class="fixed inset-x-0 top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm"
   >
     <div class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
-      <a href="index.html" class="font-playfair text-xl font-semibold tracking-wide text-charcoal">
-        Perfect Pixel Art
+      <a href="index.html" class="font-playfair text-xl lg:text-2xl font-semibold tracking-[0.1em] text-charcoal">
+        Danny van Eldik
       </a>
       <ul class="hidden md:flex items-center gap-10 text-xs font-semibold tracking-[0.2em] uppercase">
         <li><a href="index.html"     class="nav-link text-gray-500 hover:text-charcoal transition-colors">Home</a></li>
         <li><a href="portfolio.html" class="nav-link active text-charcoal">Portfolio</a></li>
         <li><a href="shop.html"      class="nav-link text-gray-500 hover:text-charcoal transition-colors">Shop</a></li>
-        <li><a href="contact.html"   class="nav-link text-gray-500 hover:text-charcoal transition-colors">Contact</a></li>
       </ul>
       <button @click="open = !open" class="md:hidden w-11 h-11 flex items-center justify-center text-charcoal flex-shrink-0" aria-label="Menu" :aria-expanded="open">
         <span class="block w-6 h-px bg-current mb-1.5 transition-all duration-300 origin-center" :class="open ? 'rotate-45 translate-y-2' : ''"></span>
@@ -56,8 +55,7 @@
       <ul class="flex flex-col px-6 py-2 text-xs font-semibold tracking-[0.2em] uppercase">
         <li><a href="index.html"     @click="open=false" class="nav-link block py-4 border-b border-gray-100">Home</a></li>
         <li><a href="portfolio.html" @click="open=false" class="nav-link block py-4 border-b border-gray-100">Portfolio</a></li>
-        <li><a href="shop.html"      @click="open=false" class="nav-link block py-4 border-b border-gray-100">Shop</a></li>
-        <li><a href="contact.html"   @click="open=false" class="nav-link block py-4">Contact</a></li>
+        <li><a href="shop.html"      @click="open=false" class="nav-link block py-4">Shop</a></li>
       </ul>
     </div>
   </nav>
@@ -67,8 +65,11 @@
     <p class="text-gold text-xs font-semibold tracking-[0.4em] uppercase mb-4">Werk</p>
     <div class="gold-divider mb-6"></div>
     <h1 class="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold mb-5">Portfolio</h1>
-    <p class="text-gray-400 text-sm font-light max-w-sm mx-auto leading-relaxed">
+    <p class="text-gray-400 text-sm font-light max-w-sm mx-auto leading-relaxed mb-4">
       Unieke kunst geeft jouw muur meer kleur — bekijk en bestel je favoriete werk.
+    </p>
+    <p class="text-gray-500 text-sm max-w-lg mx-auto leading-relaxed">
+      Al mijn werken zijn verkrijgbaar in diverse formaten en materialen via Werk aan de Muur. Klik op een werk voor alle opties.
     </p>
   </header>
 
@@ -111,7 +112,6 @@
         >
           <!-- Gallery frame container -->
           <div class="gallery-frame">
-            <!-- Image / gradient placeholder -->
             <div
               class="art-card-image aspect-[3/4]"
               :class="'bg-gradient-to-br ' + art.gradient"
@@ -136,10 +136,9 @@
             </div>
           </div>
 
-          <!-- Card footer -->
+          <!-- Card footer — title only -->
           <div class="pt-3">
             <p class="font-playfair text-sm font-semibold" x-text="art.title"></p>
-            <p class="text-xs text-gray-400 mt-1">Verkrijgbaar in diverse formaten en materialen</p>
           </div>
         </div>
       </template>
@@ -165,7 +164,7 @@
       <template x-if="lightbox">
         <div class="lightbox-content bg-white max-w-4xl w-full grid md:grid-cols-2 overflow-hidden shadow-2xl relative">
 
-          <!-- Close button — absolute top-right, large touch target -->
+          <!-- Close button -->
           <button
             @click="closeLightbox()"
             class="absolute top-3 right-3 z-20 w-10 h-10 flex items-center justify-center bg-white/90 hover:bg-white text-gray-500 hover:text-charcoal transition-colors shadow-sm"
@@ -176,7 +175,7 @@
             </svg>
           </button>
 
-          <!-- Image pane: fixed height on mobile, auto on desktop -->
+          <!-- Image pane -->
           <div
             class="h-56 sm:h-72 md:h-auto md:aspect-auto bg-gradient-to-br"
             :class="'bg-gradient-to-br ' + lightbox.gradient"
@@ -185,7 +184,6 @@
           <!-- Info pane -->
           <div class="p-6 md:p-10 flex flex-col justify-between">
             <div>
-
               <span
                 class="art-badge mb-4 inline-block"
                 :class="lightbox.category === 'abstract' ? 'art-badge-abstract' : 'art-badge-natuur'"
@@ -241,14 +239,13 @@
   <!-- ═══════════════════════  FOOTER  ═══════════════════════ -->
   <footer class="py-12 px-6 border-t border-gray-100 mt-16">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-      <a href="index.html" class="font-playfair text-xl font-semibold tracking-wide">Perfect Pixel Art</a>
+      <a href="index.html" class="font-playfair text-xl font-semibold tracking-[0.1em]">Danny van Eldik</a>
       <ul class="flex flex-wrap justify-center gap-8 text-xs font-semibold tracking-[0.2em] uppercase text-gray-400">
         <li><a href="index.html"     class="hover:text-gold transition-colors">Home</a></li>
         <li><a href="portfolio.html" class="hover:text-gold transition-colors">Portfolio</a></li>
         <li><a href="shop.html"      class="hover:text-gold transition-colors">Shop</a></li>
-        <li><a href="contact.html"   class="hover:text-gold transition-colors">Contact</a></li>
       </ul>
-      <p class="text-xs text-gray-400">&copy; <span id="footer-year"></span> Perfect Pixel Art</p>
+      <p class="text-xs text-gray-400">&copy; <span id="footer-year"></span> Danny van Eldik</p>
     </div>
   </footer>
 

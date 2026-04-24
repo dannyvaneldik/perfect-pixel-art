@@ -39,8 +39,8 @@
   >
     <div class="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
 
-      <a href="index.html" :class="scrolled ? 'text-charcoal' : 'text-white'" class="font-playfair text-xl font-semibold tracking-wide transition-colors">
-        Perfect Pixel Art
+      <a href="index.html" :class="scrolled ? 'text-charcoal' : 'text-white'" class="font-playfair text-xl lg:text-2xl font-semibold tracking-[0.1em] transition-colors">
+        Danny van Eldik
       </a>
 
       <!-- Desktop links -->
@@ -48,7 +48,6 @@
         <li><a href="index.html"     :class="scrolled ? 'text-charcoal' : 'text-white'" class="nav-link transition-colors active">Home</a></li>
         <li><a href="portfolio.html" :class="scrolled ? 'text-charcoal' : 'text-white'" class="nav-link transition-colors">Portfolio</a></li>
         <li><a href="shop.html"      :class="scrolled ? 'text-charcoal' : 'text-white'" class="nav-link transition-colors">Shop</a></li>
-        <li><a href="contact.html"   :class="scrolled ? 'text-charcoal' : 'text-white'" class="nav-link transition-colors">Contact</a></li>
       </ul>
 
       <!-- Mobile hamburger — min 44×44px touch target -->
@@ -73,8 +72,7 @@
       <ul class="flex flex-col px-6 py-2 text-xs font-semibold tracking-[0.2em] uppercase text-charcoal">
         <li><a href="index.html"     @click="open=false" class="nav-link block py-4 border-b border-gray-100">Home</a></li>
         <li><a href="portfolio.html" @click="open=false" class="nav-link block py-4 border-b border-gray-100">Portfolio</a></li>
-        <li><a href="shop.html"      @click="open=false" class="nav-link block py-4 border-b border-gray-100">Shop</a></li>
-        <li><a href="contact.html"   @click="open=false" class="nav-link block py-4">Contact</a></li>
+        <li><a href="shop.html"      @click="open=false" class="nav-link block py-4">Shop</a></li>
       </ul>
     </div>
   </nav>
@@ -146,7 +144,6 @@
       <div class="reveal reveal-delay-2 about-frame">
         <div class="about-frame-deco"></div>
         <div class="aspect-square bg-gradient-to-br from-stone-200 via-stone-300 to-stone-400 overflow-hidden flex items-center justify-center text-stone-400">
-          <!-- Replace with <img src="/assets/images/artist-photo.jpg" alt="Perfect Pixel Art kunstenaar" class="w-full h-full object-cover"> -->
           <svg xmlns="http://www.w3.org/2000/svg" class="h-20 w-20 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="0.8" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
           </svg>
@@ -245,7 +242,7 @@
   <section class="py-16 md:py-24 px-6 bg-charcoal text-white text-center reveal">
     <p class="text-gold text-xs font-semibold tracking-[0.35em] uppercase mb-5">Winkel</p>
     <div class="gold-divider mb-8"></div>
-    <h2 class="font-playfair text-4xl md:text-5xl font-bold mb-6">Bestel uw favoriete werk</h2>
+    <h2 class="font-playfair text-4xl md:text-5xl font-bold mb-6">Bestel jouw favoriete werk</h2>
     <p class="font-light text-gray-300 text-sm leading-relaxed max-w-md mx-auto mb-10">
       Premium prints op o.a. canvas, aluminium en acryl. Snel geleverd via Werk aan de Muur.
     </p>
@@ -257,14 +254,13 @@
   <!-- ═══════════════════════  FOOTER  ═══════════════════════ -->
   <footer class="py-12 px-6 border-t border-gray-100">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-      <a href="index.html" class="font-playfair text-xl font-semibold tracking-wide">Perfect Pixel Art</a>
+      <a href="index.html" class="font-playfair text-xl font-semibold tracking-[0.1em]">Danny van Eldik</a>
       <ul class="flex flex-wrap justify-center gap-8 text-xs font-semibold tracking-[0.2em] uppercase text-gray-400">
         <li><a href="index.html"     class="hover:text-gold transition-colors">Home</a></li>
         <li><a href="portfolio.html" class="hover:text-gold transition-colors">Portfolio</a></li>
         <li><a href="shop.html"      class="hover:text-gold transition-colors">Shop</a></li>
-        <li><a href="contact.html"   class="hover:text-gold transition-colors">Contact</a></li>
       </ul>
-      <p class="text-xs text-gray-400">&copy; <span id="footer-year"></span> Perfect Pixel Art. Alle rechten voorbehouden.</p>
+      <p class="text-xs text-gray-400">&copy; <span id="footer-year"></span> Danny van Eldik. Alle rechten voorbehouden.</p>
     </div>
   </footer>
 

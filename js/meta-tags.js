@@ -1,41 +1,34 @@
 /**
- * SEO meta tag injection for Perfect Pixel Art
- * Keywords focus: 'Abstracte kunst voor woonkamer', 'Natuurfotografie op maat'
+ * SEO meta tag injection for Danny van Eldik
+ * Keywords focus: 'Abstracte kunst voor woonkamer', 'Kunstprints op maat Nederland'
  */
 (function () {
-  const SITE_NAME = 'Perfect Pixel Art';
-  const BASE_URL  = 'https://www.perfectpixelart.nl'; // update to real domain
+  const SITE_NAME = 'Danny van Eldik';
+  const BASE_URL  = 'https://www.dannyvaneldik.nl'; // update to real domain
   const DEFAULT_IMAGE = '/assets/images/og-default.jpg';
 
   const pageMeta = {
     '/': {
-      title: 'Perfect Pixel Art | Abstracte Kunst & Natuurfotografie voor uw Woonkamer',
+      title: 'Danny van Eldik | Abstracte kunst, portretten, illustraties en natuurfotografie',
       description:
-        'Ontdek unieke abstracte schilderijen en natuurfotografie van Perfect Pixel Art. Luxe prints op canvas, acryl en aluminium. Abstracte kunst voor woonkamer, bestelbaar via Werk aan de Muur.',
+        'Ontdek unieke kunstwerken van Danny van Eldik — van abstract tot portret en van illustratie tot natuurfotografie. Luxe prints op canvas, acrylglas, aluminium en meer. Bestelbaar via Werk aan de Muur.',
       keywords:
-        'abstracte kunst voor woonkamer, natuurfotografie op maat, kunst kopen Nederland, canvas print bestellen, abstracte schilderijen, moderne kunst interieur, prints op maat',
+        'abstracte kunst voor woonkamer, kunstprints op maat, kunst kopen Nederland, canvas print bestellen, abstracte schilderijen, moderne kunst interieur, Danny van Eldik kunst',
     },
     '/index.html': null, // will fall through to '/'
     '/portfolio.html': {
-      title: 'Portfolio | Abstracte & Natuur Kunst — Perfect Pixel Art',
+      title: 'Portfolio | Danny van Eldik — Unieke kunst voor jouw muur',
       description:
-        'Blader door het volledige portfolio van Perfect Pixel Art. Abstracte werken en natuurfotografie beschikbaar als premium print op maat voor uw interieur.',
+        'Blader door het volledige portfolio van Danny van Eldik. Abstract, portretten, illustraties en natuurfotografie — beschikbaar als premium print op maat via Werk aan de Muur.',
       keywords:
-        'portfolio abstracte kunst, natuur fotografie kunst kopen, schilderijen portfolio, kunstprints bestellen, abstracte kunst voor woonkamer',
+        'portfolio abstracte kunst, natuur fotografie kunst kopen, kunstprints bestellen, abstracte kunst voor woonkamer, Danny van Eldik portfolio',
     },
     '/shop.html': {
-      title: 'Shop | Kunstprints op Maat — Perfect Pixel Art',
+      title: 'Shop | Kunstprints op Maat — Danny van Eldik',
       description:
-        'Bestel uw favoriete kunstwerk als hoogwaardige print. Canvas, acryl en aluminium beschikbaar via Werk aan de Muur. Snel geleverd, luxe kwaliteit.',
+        'Bestel jouw favoriete kunstwerk als hoogwaardige print. Canvas, acrylglas, aluminium, ArtFrame en fotobehang beschikbaar via Werk aan de Muur. Snel geleverd, premium kwaliteit.',
       keywords:
-        'kunstprint kopen, canvas print bestellen, abstracte kunst kopen, natuurfotografie op maat, werk aan de muur, print op canvas woonkamer',
-    },
-    '/contact.html': {
-      title: 'Contact | Perfect Pixel Art',
-      description:
-        'Neem contact op met Perfect Pixel Art voor vragen over opdrachten op maat, samenwerkingen of uw bestelling.',
-      keywords:
-        'contact kunstenaar, opdracht kunstwerk op maat, samenwerking kunstenaar Nederland, kunstwerk laten maken',
+        'kunstprint kopen, canvas print bestellen, abstracte kunst kopen, acrylglas print, werk aan de muur, print op canvas woonkamer, Danny van Eldik shop',
     },
   };
 
